@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/main.css" />
+    <title>Einkaufsliste</title>
+  </head>
+  <body>
+    <main class="shopping">
+      <h1 class="shopping__heading">Einkaufsliste</h1>
+      <ul class="shopping__list">
+        <li class="shopping__item">
+          <label for="shopping-text" class="visually-hidden"></label
+          ><input type="text" id="shopping-text" class="shopping__text" />
+          <button class="btn__add">+</button>
+        </li>
+      </ul>
+      <button class="btn__delete">gekaufte Dinge löschen</button>
+    </main>
+    <footer class="view">
+      <h2 class="view__heading">Anzeige</h2>
+      <button class="btn__all">alles</button
+      ><button class="btn__selection">fehlende Dinge</button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
