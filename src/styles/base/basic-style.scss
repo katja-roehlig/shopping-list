@@ -8,7 +8,28 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(172, 165, 138);
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.main {
+  background-color: beige;
+  width: 90vw;
+  height: 80vh;
+  margin-top: 2rem;
+  padding-inline: 2rem;
+}
+.footer {
+  background-color: beige;
+  width: 90vw;
 }

@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.btn {
+  all: unset;
+  padding: 0.8rem 2.5rem;
+  color: $background-color;
+  background-color: $contrast-color;
+  border-radius: 0.5rem;
+}
+.btn-delete {
+  margin-top: 2rem;
+}

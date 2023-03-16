@@ -8,23 +8,39 @@
     <title>Einkaufsliste</title>
   </head>
   <body>
-    <main class="shopping">
-      <h1 class="shopping__heading">Einkaufsliste</h1>
-      <ul class="shopping__list">
-        <li class="shopping__item">
-          <label for="shopping-text" class="visually-hidden"></label
-          ><input type="text" id="shopping-text" class="shopping__text" />
-          <button class="btn__add">+</button>
-        </li>
-      </ul>
-      <button class="btn__delete">gekaufte Dinge löschen</button>
+    <main class="main">
+      <h1 class="main__heading">Einkaufsliste</h1>
+      <!-- <form onsubmit="return false" class="store">
+        <label for="store" class="visually-hidden">Geschäft</label>
+        <input
+          type="text"
+          id="store"
+          class="search__text choose-store"
+          placeholder="Geschäft"
+        />
+      </form>-->
+
+      <form onsubmit="return false" class="search">
+        <label for="shopping-text" class="visually-hidden">Ware eintragen</label
+        ><input
+          type="text"
+          id="shopping-text"
+          class="search__text"
+          placeholder="Hier eintragen"
+        />
+        <button class="btn btn-add" type="button">+</button>
+      </form>
+      <ul class="list"></ul>
+      <button class="btn btn-delete">gekaufte Dinge löschen</button>
     </main>
-    <footer class="view">
-      <h2 class="view__heading">Anzeige</h2>
-      <button class="btn__all">alles</button
-      ><button class="btn__selection">fehlende Dinge</button>
+    <footer class="footer">
+      <h2 class="footer__heading">Anzeige</h2>
+      <div class="footer__container">
+        <button class="btn btn-all">alles</button
+        ><button class="btn btn-selection">fehlende Dinge</button>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./public/script.js"></script>
   </body>
 </html>
