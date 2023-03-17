@@ -1,14 +1,40 @@
 "use strict";
 let shoppingList = [];
+let storeText = document.querySelector(".choose__store");
+const storeBtn = document.querySelector(".btn-store");
+let storeForm = document.querySelector(".store");
 let shoppingText = document.querySelector(".search__text");
 const addBtn = document.querySelector(".btn-add");
 const deleteBtn = document.querySelector(".btn-delete");
 const ulElement = document.querySelector(".list");
 const selectBtn = document.querySelector(".btn-selection");
 const allBtn = document.querySelector(".btn-all");
-//********************************************************************************************************** */
+let subheading = document.querySelector(".main__subheading");
+//* Store zum 1.Mal eingeben *************************************************************************************************** */
+storeText.focus();
+storeBtn.addEventListener("click", (event) => {
+    event.preventDefault;
+    storeForm.style.display = "none";
+    subheading.innerText = storeText.value;
+    shoppingText.parentElement?.classList.add("search");
+    shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || []);
+    render(shoppingList);
+});
+//*Store wechseln ************************************************************************************ */
+subheading.addEventListener("click", (event) => {
+    event.preventDefault;
+    storeForm.style.display = "flex";
+    storeText.value = "";
+    storeText.focus();
+    render([]);
+    subheading.innerText = storeText.value;
+    shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || []);
+    render(shoppingList);
+});
+//***Ware abgreifen******************************************************************************************************* */
 addBtn.addEventListener("click", (event) => {
     event.preventDefault;
+    let storeValue = subheading.innerText;
     if (shoppingText.value !== "") {
         let shoppingItem = {
             item: shoppingText.value,
@@ -16,16 +42,36 @@ addBtn.addEventListener("click", (event) => {
             id: getId(),
         };
         shoppingList.push(shoppingItem);
+        localStorage.setItem(storeValue, JSON.stringify(shoppingList));
         render(shoppingList);
     }
     shoppingText.value = "";
     shoppingText.focus();
 });
-//********************************************************************************************************** */
+shoppingText.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        let storeValue = subheading.innerText;
+        if (shoppingText.value !== "") {
+            let shoppingItem = {
+                item: shoppingText.value,
+                isShopped: false,
+                id: getId(),
+            };
+            shoppingList.push(shoppingItem);
+            localStorage.setItem(storeValue, JSON.stringify(shoppingList));
+            render(shoppingList);
+        }
+        shoppingText.value = "";
+        shoppingText.focus();
+    }
+});
+//*gekaufte Dinge löschen********************************************************************************************************* */
 deleteBtn.addEventListener("click", () => {
+    let storeValue = subheading.innerText;
     let newShoppingList = shoppingList.filter((element) => element.isShopped === false);
     shoppingList = newShoppingList;
     render(shoppingList);
+    localStorage.setItem(storeValue, JSON.stringify(shoppingList));
 });
 //*Anzeige********************************************************************************************************** */
 //selected

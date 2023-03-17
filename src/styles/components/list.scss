@@ -2,33 +2,78 @@
 
 .main__heading {
   font-size: 2.5rem;
-  padding-block: 2rem 2rem;
+  padding-block: 2rem 1rem;
   text-align: center;
   color: $contrast-color;
+}
+.main__subheading {
+  font-size: 1.8rem;
+  padding-block: 0rem 1rem;
+  text-align: center;
+  color: $contrast-color;
+  border-bottom: 1px solid $contrast-color;
 }
 .list {
   list-style: none;
   padding-inline: 1.5rem;
 }
+
+.search__view {
+  display: none;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-block: 0.8rem 1.5rem;
+}
+
 .search__text {
-  padding: 0.8rem 1rem;
-  width: 75%;
+  padding: 0.8rem 1rem 0.8rem 1.5rem;
+  width: 70%;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+}
+.store {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  position: relative;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+}
+.choose__store {
+  width: 100%;
+  padding: 0.8rem 0.5rem 0.8rem 1.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  margin-inline: 0;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid $contrast-color;
 }
 .list__new {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1.5rem;
   color: $contrast-color;
   margin: 0;
-  background-color: white;
-  flex: 3 0 0%;
+  background-color: rgba(255, 255, 255, 0.612);
+  flex-basis: 100%;
 }
 .list__item {
   margin: 0;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
+}
+.checkbox {
+  height: 2rem;
+  width: 2rem;
+  accent-color: rgb(215, 10, 154);
 }
 input[type="checkbox"] {
   margin: 0;
