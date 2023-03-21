@@ -1,4 +1,6 @@
-let shoppingList: any[] = [];
+type ShoppingItem = { item: string; isShopped: boolean; id?: string };
+
+let shoppingList: ShoppingItem[] = [];
 
 let storeText = document.querySelector(".choose__store") as HTMLInputElement;
 const storeBtn = document.querySelector(".btn-store") as HTMLButtonElement;
@@ -19,7 +21,7 @@ storeBtn.addEventListener("click", (event) => {
   storeForm.style.display = "none";
   subheading.innerText = storeText.value;
   shoppingText.parentElement?.classList.add("search");
-  shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || []);
+  shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
 //*Store wechseln ************************************************************************************ */
@@ -31,7 +33,7 @@ subheading.addEventListener("click", (event) => {
   render([]);
   subheading.innerText = storeText.value;
 
-  shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || []);
+  shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
 //***Ware abgreifen******************************************************************************************************* */
@@ -39,7 +41,7 @@ addBtn.addEventListener("click", (event) => {
   event.preventDefault;
   let storeValue = subheading.innerText;
   if (shoppingText.value !== "") {
-    let shoppingItem = {
+    let shoppingItem: ShoppingItem = {
       item: shoppingText.value,
       isShopped: false,
       id: getId(),

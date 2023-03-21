@@ -17,7 +17,7 @@ storeBtn.addEventListener("click", (event) => {
     storeForm.style.display = "none";
     subheading.innerText = storeText.value;
     shoppingText.parentElement?.classList.add("search");
-    shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || []);
+    shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
     render(shoppingList);
 });
 //*Store wechseln ************************************************************************************ */
@@ -28,7 +28,7 @@ subheading.addEventListener("click", (event) => {
     storeText.focus();
     render([]);
     subheading.innerText = storeText.value;
-    shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || []);
+    shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
     render(shoppingList);
 });
 //***Ware abgreifen******************************************************************************************************* */
