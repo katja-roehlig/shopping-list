@@ -1,4 +1,4 @@
-type ShoppingItem = { item: string; isShopped: boolean; id?: string };
+type ShoppingItem = { item: string; isShopped: boolean; id: string };
 
 let shoppingList: ShoppingItem[] = [];
 
@@ -19,7 +19,7 @@ storeText.focus();
 storeBtn.addEventListener("click", (event) => {
   event.preventDefault;
   storeForm.style.display = "none";
-  subheading.innerText = storeText.value;
+  subheading.innerText = storeText.value.toUpperCase();
   shoppingText.parentElement?.classList.add("search");
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
@@ -31,7 +31,7 @@ subheading.addEventListener("click", (event) => {
   storeText.value = "";
   storeText.focus();
   render([]);
-  subheading.innerText = storeText.value;
+  subheading.innerText = storeText.value.toUpperCase();
 
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
@@ -75,7 +75,7 @@ shoppingText.addEventListener("keyup", (event) => {
 //*gekaufte Dinge löschen********************************************************************************************************* */
 
 deleteBtn.addEventListener("click", () => {
-  let storeValue = subheading.innerText;
+  let storeValue = subheading.innerText.toUpperCase();
   let newShoppingList = shoppingList.filter(
     (element) => element.isShopped === false
   );
@@ -83,24 +83,9 @@ deleteBtn.addEventListener("click", () => {
   render(shoppingList);
   localStorage.setItem(storeValue, JSON.stringify(shoppingList));
 });
-//*Anzeige********************************************************************************************************** */
-//selected
-selectBtn.addEventListener("click", (event) => {
-  event.preventDefault;
-  let filteredShoppingList = shoppingList.filter(
-    (element) => element.isShopped === false
-  );
-  render(filteredShoppingList);
-});
 
-//all
-allBtn.addEventListener("click", (event) => {
-  event.preventDefault;
-  render(shoppingList);
-});
-
-//********************************************************************************************************** */
-function render(array: any[]) {
+/* ********************************************************************************************************** */
+function render(array: ShoppingItem[]) {
   ulElement.innerText = "";
   for (let element of array) {
     const liElement = document.createElement("li");
@@ -130,9 +115,7 @@ function render(array: any[]) {
   }
 }
 //*********************************************************************************************************************** */
-function getId() {
-  if (shoppingText.value !== "") {
-    let id: string = shoppingText.value.replaceAll(" ", "");
-    return id;
-  }
+function getId(): string {
+  let id: string = shoppingText.value.replaceAll(" ", "");
+  return id;
 }

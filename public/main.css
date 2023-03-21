@@ -29,7 +29,7 @@ body {
   width: 85vw;
   min-height: 80vh;
   margin-top: 3rem;
-  padding-inline: 2rem;
+  padding-inline: 3.5rem;
   box-shadow: 0px 0px 5px rgba(61, 47, 142, 0.895);
   border-radius: 0.3rem;
   position: relative;
@@ -42,22 +42,21 @@ body {
 
 .main__heading {
   font-size: 2.5rem;
-  padding-block: 2rem 1rem;
+  padding-block: 2rem 0.5rem;
   text-align: center;
   color: rgba(61, 47, 142, 0.895);
 }
 
 .main__subheading {
   font-size: 1.8rem;
-  padding-block: 0rem 1rem;
+  padding-block: 0rem 1.2rem;
   text-align: center;
-  color: rgba(61, 47, 142, 0.895);
+  color: rgb(215, 10, 154);
   border-bottom: 1px solid rgba(61, 47, 142, 0.895);
 }
 
 .list {
   list-style: none;
-  padding-inline: 1.5rem;
 }
 
 .search__view {
@@ -66,17 +65,17 @@ body {
 
 .search {
   display: flex;
-  justify-content: center;
-  align-items: end;
-  margin-block: 0.8rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.5rem 2rem;
 }
 
 .search__text {
   padding: 0.8rem 1rem 0.8rem 1.5rem;
-  width: 70%;
+  width: 80%;
   border: none;
   border-radius: 1.5rem;
-  margin-top: 1rem;
+  margin-inline: 0;
 }
 
 .store {
@@ -130,7 +129,6 @@ input[type=checkbox] {
 
 .btn {
   all: unset;
-  padding: 0.8rem 2.5rem;
   color: beige;
   background-color: rgba(61, 47, 142, 0.895);
   border-radius: 2rem;
@@ -141,11 +139,11 @@ input[type=checkbox] {
 
 .btn-delete {
   border-radius: 3rem;
-  padding: 0.6rem 1.5rem 0.8rem 1.5rem;
+  padding: 0.6rem 1.1rem 0.6rem 1.1rem;
   font-size: 2rem;
   position: absolute;
   bottom: 5%;
-  right: 8%;
+  right: 3.5rem;
   text-align: center;
 }
 
@@ -159,8 +157,14 @@ input[type=checkbox] {
   font-weight: bold;
 }
 
+/* .btn-add {
+  padding: 0.7rem 2rem 0.5rem 2rem;
+} */
 .btn-add {
-  padding: 0.6rem 2rem;
+  border-radius: 4rem;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .footer__heading {

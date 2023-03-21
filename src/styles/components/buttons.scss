@@ -2,7 +2,6 @@
 
 .btn {
   all: unset;
-  padding: 0.8rem 2.5rem;
   color: $background-color;
   background-color: $contrast-color;
   border-radius: 2rem;
@@ -12,11 +11,11 @@
 }
 .btn-delete {
   border-radius: 3rem;
-  padding: 0.6rem 1.5rem 0.8rem 1.5rem;
+  padding: 0.6rem 1.1rem 0.6rem 1.1rem;
   font-size: 2rem;
   position: absolute;
   bottom: 5%;
-  right: 8%;
+  right: 3.5rem;
   text-align: center;
 }
 .btn-store {
@@ -28,6 +27,12 @@
   background-color: transparent;
   font-weight: bold;
 }
+/* .btn-add {
+  padding: 0.7rem 2rem 0.5rem 2rem;
+} */
 .btn-add {
-  padding: 0.6rem 2rem;
+  border-radius: 4rem;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  font-size: 2rem;
+  text-align: center;
 }

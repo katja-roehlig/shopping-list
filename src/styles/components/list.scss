@@ -2,20 +2,20 @@
 
 .main__heading {
   font-size: 2.5rem;
-  padding-block: 2rem 1rem;
+  padding-block: 2rem 0.5rem;
   text-align: center;
   color: $contrast-color;
 }
 .main__subheading {
   font-size: 1.8rem;
-  padding-block: 0rem 1rem;
+  padding-block: 0rem 1.2rem;
   text-align: center;
-  color: $contrast-color;
+  color: rgb(215, 10, 154);
   border-bottom: 1px solid $contrast-color;
 }
 .list {
   list-style: none;
-  padding-inline: 1.5rem;
+  // padding-inline: 1.5rem;
 }
 
 .search__view {
@@ -23,17 +23,18 @@
 }
 .search {
   display: flex;
-  justify-content: center;
-  align-items: end;
-  margin-block: 0.8rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.5rem 2rem;
 }
 
 .search__text {
   padding: 0.8rem 1rem 0.8rem 1.5rem;
-  width: 70%;
+  width: 80%;
   border: none;
   border-radius: 1.5rem;
-  margin-top: 1rem;
+
+  margin-inline: 0;
 }
 .store {
   display: flex;
