@@ -22,7 +22,7 @@ storeBtn.addEventListener("click", (event) => {
   event.preventDefault;
   storeForm.style.display = "none";
   subheading.innerText = storeInput.value.toUpperCase();
-  shoppingInput.parentElement?.classList.add("search");
+  shoppingInput.parentElement?.classList.add("shopping-item-flex");
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
