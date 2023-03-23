@@ -2,25 +2,27 @@ type ShoppingItem = { item: string; isShopped: boolean; id: string };
 
 let shoppingList: ShoppingItem[] = [];
 
-let storeText = document.querySelector(".choose__store") as HTMLInputElement;
-const storeBtn = document.querySelector(".btn-store") as HTMLButtonElement;
+let storeInput = document.querySelector(".store__input") as HTMLInputElement;
+const storeBtn = document.querySelector(".store__btn") as HTMLButtonElement;
 let storeForm = document.querySelector(".store") as HTMLFormElement;
-let shoppingText = document.querySelector(".search__text") as HTMLInputElement;
-const addBtn = document.querySelector(".btn-add") as HTMLButtonElement;
+let shoppingInput = document.querySelector(
+  ".shopping-item__input"
+) as HTMLInputElement;
+const shoppingBtn = document.querySelector(
+  ".shopping-item__btn"
+) as HTMLButtonElement;
 const deleteBtn = document.querySelector(".btn-delete") as HTMLButtonElement;
 const ulElement = document.querySelector(".list") as HTMLUListElement;
-const selectBtn = document.querySelector(".btn-selection") as HTMLButtonElement;
-const allBtn = document.querySelector(".btn-all") as HTMLButtonElement;
 let subheading = document.querySelector(
   ".main__subheading"
 ) as HTMLHeadingElement;
 //* Store zum 1.Mal eingeben *************************************************************************************************** */
-storeText.focus();
+storeInput.focus();
 storeBtn.addEventListener("click", (event) => {
   event.preventDefault;
   storeForm.style.display = "none";
-  subheading.innerText = storeText.value.toUpperCase();
-  shoppingText.parentElement?.classList.add("search");
+  subheading.innerText = storeInput.value.toUpperCase();
+  shoppingInput.parentElement?.classList.add("search");
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
@@ -28,21 +30,21 @@ storeBtn.addEventListener("click", (event) => {
 subheading.addEventListener("click", (event) => {
   event.preventDefault;
   storeForm.style.display = "flex";
-  storeText.value = "";
-  storeText.focus();
+  storeInput.value = "";
+  storeInput.focus();
   render([]);
-  subheading.innerText = storeText.value.toUpperCase();
+  subheading.innerText = storeInput.value.toUpperCase();
 
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
 //***Ware abgreifen******************************************************************************************************* */
-addBtn.addEventListener("click", (event) => {
+shoppingBtn.addEventListener("click", (event) => {
   event.preventDefault;
   let storeValue = subheading.innerText;
-  if (shoppingText.value !== "") {
+  if (shoppingInput.value !== "") {
     let shoppingItem: ShoppingItem = {
-      item: shoppingText.value,
+      item: shoppingInput.value,
       isShopped: false,
       id: getId(),
     };
@@ -50,17 +52,17 @@ addBtn.addEventListener("click", (event) => {
     localStorage.setItem(storeValue, JSON.stringify(shoppingList));
     render(shoppingList);
   }
-  shoppingText.value = "";
-  shoppingText.focus();
+  shoppingInput.value = "";
+  shoppingInput.focus();
 });
 
-shoppingText.addEventListener("keyup", (event) => {
+shoppingInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     let storeValue = subheading.innerText;
 
-    if (shoppingText.value !== "") {
+    if (shoppingInput.value !== "") {
       let shoppingItem = {
-        item: shoppingText.value,
+        item: shoppingInput.value,
         isShopped: false,
         id: getId(),
       };
@@ -68,8 +70,8 @@ shoppingText.addEventListener("keyup", (event) => {
       localStorage.setItem(storeValue, JSON.stringify(shoppingList));
       render(shoppingList);
     }
-    shoppingText.value = "";
-    shoppingText.focus();
+    shoppingInput.value = "";
+    shoppingInput.focus();
   }
 });
 //*gekaufte Dinge löschen********************************************************************************************************* */
@@ -88,34 +90,34 @@ deleteBtn.addEventListener("click", () => {
 function render(array: ShoppingItem[]) {
   ulElement.innerText = "";
   for (let element of array) {
-    const liElement = document.createElement("li");
-    const checkbox = document.createElement("input");
+    const listItem = document.createElement("li");
+    const listCheckbox = document.createElement("input");
     const label = document.createElement("label");
     label.innerText = element.item;
 
-    label.classList.add("list__new");
+    label.classList.add("list__label");
     label.setAttribute("for", element.id);
 
-    liElement.classList.add("list__item");
+    listItem.classList.add("list__item");
 
-    checkbox.setAttribute("type", "checkbox");
-    checkbox.setAttribute("id", element.id);
-    checkbox.setAttribute("class", "checkbox");
-    checkbox.checked = element.isShopped;
+    listCheckbox.setAttribute("type", "checkbox");
+    listCheckbox.setAttribute("id", element.id);
+    listCheckbox.setAttribute("class", "checkbox");
+    listCheckbox.checked = element.isShopped;
 
-    liElement.append(label);
-    liElement.prepend(checkbox);
+    listItem.append(label);
+    listItem.prepend(listCheckbox);
 
-    ulElement.appendChild(liElement);
+    ulElement.appendChild(listItem);
 
-    checkbox.addEventListener("change", (event) => {
-      let index = array.findIndex((element) => element.id === checkbox.id);
+    listCheckbox.addEventListener("change", (event) => {
+      let index = array.findIndex((element) => element.id === listCheckbox.id);
       array[index].isShopped = !array[index].isShopped;
     });
   }
 }
 //*********************************************************************************************************************** */
 function getId(): string {
-  let id: string = shoppingText.value.replaceAll(" ", "");
+  let id: string = shoppingInput.value.replaceAll(" ", "");
   return id;
 }

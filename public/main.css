@@ -48,7 +48,7 @@ body {
 }
 
 .main__subheading {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding-block: 0rem 1.2rem;
   text-align: center;
   color: rgb(215, 10, 154);
@@ -59,7 +59,7 @@ body {
   list-style: none;
 }
 
-.search__view {
+.shopping-item {
   display: none;
 }
 
@@ -70,7 +70,7 @@ body {
   margin-block: 1.5rem 2rem;
 }
 
-.search__text {
+.shopping-item__input {
   padding: 0.8rem 1rem 0.8rem 1.5rem;
   width: 80%;
   border: none;
@@ -87,7 +87,7 @@ body {
   margin-top: 1rem;
 }
 
-.choose__store {
+.store__input {
   width: 100%;
   padding: 0.8rem 0.5rem 0.8rem 1.5rem;
   border: none;
@@ -100,7 +100,7 @@ input:focus {
   border: 1px solid rgba(61, 47, 142, 0.895);
 }
 
-.list__new {
+.list__label {
   padding: 0.7rem 1rem;
   border-radius: 1.5rem;
   color: rgba(61, 47, 142, 0.895);
@@ -117,13 +117,13 @@ input:focus {
   gap: 1rem;
 }
 
-.checkbox {
+.listCheckbox {
   height: 2rem;
   width: 2rem;
   accent-color: rgb(215, 10, 154);
 }
 
-input[type=checkbox] {
+input[type=listCheckbox] {
   margin: 0;
 }
 
@@ -147,7 +147,7 @@ input[type=checkbox] {
   text-align: center;
 }
 
-.btn-store {
+.store__btn {
   all: unset;
   color: rgba(61, 47, 142, 0.895);
   padding: 0.8rem 1.5rem;
@@ -157,10 +157,10 @@ input[type=checkbox] {
   font-weight: bold;
 }
 
-/* .btn-add {
+/* .shopping-item__btn {
   padding: 0.7rem 2rem 0.5rem 2rem;
 } */
-.btn-add {
+.shopping-item__btn {
   border-radius: 4rem;
   padding: 0.6rem 1rem 0.6rem 1rem;
   font-size: 2rem;

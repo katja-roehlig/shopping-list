@@ -1,22 +1,20 @@
 "use strict";
 let shoppingList = [];
-let storeText = document.querySelector(".choose__store");
-const storeBtn = document.querySelector(".btn-store");
+let storeInput = document.querySelector(".store__input");
+const storeBtn = document.querySelector(".store__btn");
 let storeForm = document.querySelector(".store");
-let shoppingText = document.querySelector(".search__text");
-const addBtn = document.querySelector(".btn-add");
+let shoppingInput = document.querySelector(".shopping-item__input");
+const shoppingBtn = document.querySelector(".shopping-item__btn");
 const deleteBtn = document.querySelector(".btn-delete");
 const ulElement = document.querySelector(".list");
-const selectBtn = document.querySelector(".btn-selection");
-const allBtn = document.querySelector(".btn-all");
 let subheading = document.querySelector(".main__subheading");
 //* Store zum 1.Mal eingeben *************************************************************************************************** */
-storeText.focus();
+storeInput.focus();
 storeBtn.addEventListener("click", (event) => {
     event.preventDefault;
     storeForm.style.display = "none";
-    subheading.innerText = storeText.value.toUpperCase();
-    shoppingText.parentElement?.classList.add("search");
+    subheading.innerText = storeInput.value.toUpperCase();
+    shoppingInput.parentElement?.classList.add("search");
     shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
     render(shoppingList);
 });
@@ -24,20 +22,20 @@ storeBtn.addEventListener("click", (event) => {
 subheading.addEventListener("click", (event) => {
     event.preventDefault;
     storeForm.style.display = "flex";
-    storeText.value = "";
-    storeText.focus();
+    storeInput.value = "";
+    storeInput.focus();
     render([]);
-    subheading.innerText = storeText.value.toUpperCase();
+    subheading.innerText = storeInput.value.toUpperCase();
     shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
     render(shoppingList);
 });
 //***Ware abgreifen******************************************************************************************************* */
-addBtn.addEventListener("click", (event) => {
+shoppingBtn.addEventListener("click", (event) => {
     event.preventDefault;
     let storeValue = subheading.innerText;
-    if (shoppingText.value !== "") {
+    if (shoppingInput.value !== "") {
         let shoppingItem = {
-            item: shoppingText.value,
+            item: shoppingInput.value,
             isShopped: false,
             id: getId(),
         };
@@ -45,15 +43,15 @@ addBtn.addEventListener("click", (event) => {
         localStorage.setItem(storeValue, JSON.stringify(shoppingList));
         render(shoppingList);
     }
-    shoppingText.value = "";
-    shoppingText.focus();
+    shoppingInput.value = "";
+    shoppingInput.focus();
 });
-shoppingText.addEventListener("keyup", (event) => {
+shoppingInput.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
         let storeValue = subheading.innerText;
-        if (shoppingText.value !== "") {
+        if (shoppingInput.value !== "") {
             let shoppingItem = {
-                item: shoppingText.value,
+                item: shoppingInput.value,
                 isShopped: false,
                 id: getId(),
             };
@@ -61,8 +59,8 @@ shoppingText.addEventListener("keyup", (event) => {
             localStorage.setItem(storeValue, JSON.stringify(shoppingList));
             render(shoppingList);
         }
-        shoppingText.value = "";
-        shoppingText.focus();
+        shoppingInput.value = "";
+        shoppingInput.focus();
     }
 });
 //*gekaufte Dinge löschen********************************************************************************************************* */
@@ -77,28 +75,28 @@ deleteBtn.addEventListener("click", () => {
 function render(array) {
     ulElement.innerText = "";
     for (let element of array) {
-        const liElement = document.createElement("li");
-        const checkbox = document.createElement("input");
+        const listItem = document.createElement("li");
+        const listCheckbox = document.createElement("input");
         const label = document.createElement("label");
         label.innerText = element.item;
-        label.classList.add("list__new");
+        label.classList.add("list__label");
         label.setAttribute("for", element.id);
-        liElement.classList.add("list__item");
-        checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("id", element.id);
-        checkbox.setAttribute("class", "checkbox");
-        checkbox.checked = element.isShopped;
-        liElement.append(label);
-        liElement.prepend(checkbox);
-        ulElement.appendChild(liElement);
-        checkbox.addEventListener("change", (event) => {
-            let index = array.findIndex((element) => element.id === checkbox.id);
+        listItem.classList.add("list__item");
+        listCheckbox.setAttribute("type", "checkbox");
+        listCheckbox.setAttribute("id", element.id);
+        listCheckbox.setAttribute("class", "checkbox");
+        listCheckbox.checked = element.isShopped;
+        listItem.append(label);
+        listItem.prepend(listCheckbox);
+        ulElement.appendChild(listItem);
+        listCheckbox.addEventListener("change", (event) => {
+            let index = array.findIndex((element) => element.id === listCheckbox.id);
             array[index].isShopped = !array[index].isShopped;
         });
     }
 }
 //*********************************************************************************************************************** */
 function getId() {
-    let id = shoppingText.value.replaceAll(" ", "");
+    let id = shoppingInput.value.replaceAll(" ", "");
     return id;
 }
