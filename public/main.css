@@ -35,28 +35,27 @@ body {
   position: relative;
   padding-bottom: 1.5rem;
 }
+@media (min-width: 630px) {
+  .main {
+    padding-top: 2rem;
+    padding-inline: 5rem;
+  }
+}
 
 .footer {
   width: 90vw;
 }
 
-.main__heading {
-  font-size: 2.5rem;
-  padding-block: 2rem 0.5rem;
-  text-align: center;
-  color: rgba(61, 47, 142, 0.895);
-}
-
-.main__subheading {
-  font-size: 1.6rem;
-  padding-block: 0rem 1.2rem;
-  text-align: center;
-  color: rgb(215, 10, 154);
-  border-bottom: 1px solid rgba(61, 47, 142, 0.895);
-}
-
 .list {
   list-style: none;
+}
+@media (min-width: 630px) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5rem;
+    grid-row-gap: 0.8rem;
+  }
 }
 
 .shopping-item {
@@ -73,23 +72,6 @@ body {
 .shopping-item__input {
   padding: 0.8rem 1rem 0.8rem 1.5rem;
   width: 80%;
-  border: none;
-  border-radius: 1.5rem;
-  margin-inline: 0;
-}
-
-.store {
-  display: flex;
-  justify-content: center;
-  width: 75%;
-  position: relative;
-  border-radius: 1.5rem;
-  margin-top: 1rem;
-}
-
-.store__input {
-  width: 100%;
-  padding: 0.8rem 0.5rem 0.8rem 1.5rem;
   border: none;
   border-radius: 1.5rem;
   margin-inline: 0;
@@ -146,6 +128,11 @@ input[type=listCheckbox] {
   right: 3.5rem;
   text-align: center;
 }
+@media (min-width: 630px) {
+  .btn-delete {
+    right: 5rem;
+  }
+}
 
 .store__btn {
   all: unset;
@@ -167,17 +154,41 @@ input[type=listCheckbox] {
   text-align: center;
 }
 
-.footer__heading {
-  font-size: 1.7rem;
-  padding-block: 2rem 1rem;
+.main__heading {
+  font-size: 2.5rem;
+  padding-block: 2rem 0.5rem;
   text-align: center;
   color: rgba(61, 47, 142, 0.895);
 }
-.footer__container {
+
+.main__subheading {
+  font-size: 1.6rem;
+  padding-block: 0rem 1.2rem;
+  text-align: center;
+  color: rgb(215, 10, 154);
+  border-bottom: 1px solid rgba(61, 47, 142, 0.895);
+}
+
+.store {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  padding-bottom: 1rem;
+  width: 75%;
+  position: relative;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+}
+
+.store__input {
+  width: 100%;
+  padding: 0.8rem 0.5rem 0.8rem 1.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  margin-inline: 0;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgba(61, 47, 142, 0.895);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -16,6 +16,7 @@ const ulElement = document.querySelector(".list") as HTMLUListElement;
 let subheading = document.querySelector(
   ".main__subheading"
 ) as HTMLHeadingElement;
+
 //* Store zum 1.Mal eingeben *************************************************************************************************** */
 storeInput.focus();
 storeBtn.addEventListener("click", (event) => {
@@ -26,6 +27,7 @@ storeBtn.addEventListener("click", (event) => {
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
+
 //*Store wechseln ************************************************************************************ */
 subheading.addEventListener("click", (event) => {
   event.preventDefault;
@@ -38,6 +40,7 @@ subheading.addEventListener("click", (event) => {
   shoppingList = JSON.parse(localStorage.getItem(subheading.innerText) || "");
   render(shoppingList);
 });
+
 //***Ware abgreifen******************************************************************************************************* */
 shoppingBtn.addEventListener("click", (event) => {
   event.preventDefault;
@@ -74,6 +77,7 @@ shoppingInput.addEventListener("keyup", (event) => {
     shoppingInput.focus();
   }
 });
+
 //*gekaufte Dinge löschen********************************************************************************************************* */
 
 deleteBtn.addEventListener("click", () => {
@@ -87,6 +91,7 @@ deleteBtn.addEventListener("click", () => {
 });
 
 /* ********************************************************************************************************** */
+
 function render(array: ShoppingItem[]) {
   ulElement.innerText = "";
   for (let element of array) {
@@ -117,6 +122,7 @@ function render(array: ShoppingItem[]) {
   }
 }
 //*********************************************************************************************************************** */
+
 function getId(): string {
   let id: string = shoppingInput.value.replaceAll(" ", "");
   return id;
