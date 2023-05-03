@@ -7,6 +7,9 @@
   position: relative;
   border-radius: 1.5rem;
   margin-top: 1rem;
+  @media (min-width: 630px) {
+    max-width: 50%;
+  }
 }
 .store__input {
   width: 100%;
