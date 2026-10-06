@@ -194,13 +194,13 @@ input[type=checkbox] {
 
 .main__heading {
   font-size: 2.5rem;
-  padding-block: 3rem 2rem;
+  padding-block: 3rem 1.2rem;
   text-align: center;
   color: rgba(61, 47, 142, 0.895);
 }
 
 .main__subheading {
-  font-size: 1.7rem;
+  font-size: 2rem;
   padding-block: 0rem 1.2rem;
   text-align: center;
   color: rgb(215, 10, 154);
