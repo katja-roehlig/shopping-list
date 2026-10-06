@@ -68,7 +68,12 @@ deleteBtn.addEventListener("click", () => {
     let newShoppingList = shoppingList.filter((element) => element.isShopped === false);
     shoppingList = newShoppingList;
     render(shoppingList);
-    localStorage.setItem(storeValue, JSON.stringify(shoppingList));
+    if (shoppingList.length <= 0) {
+        localStorage.removeItem(storeValue);
+    }
+    else {
+        localStorage.setItem(storeValue, JSON.stringify(shoppingList));
+    }
 });
 /* ********************************************************************************************************** */
 function render(array) {

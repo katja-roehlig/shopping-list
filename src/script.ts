@@ -6,15 +6,15 @@ let storeInput = document.querySelector(".store__input") as HTMLInputElement;
 const storeBtn = document.querySelector(".store__btn") as HTMLButtonElement;
 let storeForm = document.querySelector(".store") as HTMLFormElement;
 let shoppingInput = document.querySelector(
-  ".shopping-item__input"
+  ".shopping-item__input",
 ) as HTMLInputElement;
 const shoppingBtn = document.querySelector(
-  ".shopping-item__btn"
+  ".shopping-item__btn",
 ) as HTMLButtonElement;
 const deleteBtn = document.querySelector(".btn-delete") as HTMLButtonElement;
 const ulElement = document.querySelector(".list") as HTMLUListElement;
 let subheading = document.querySelector(
-  ".main__subheading"
+  ".main__subheading",
 ) as HTMLHeadingElement;
 
 //* Store zum 1.Mal eingeben *************************************************************************************************** */
@@ -82,11 +82,15 @@ shoppingInput.addEventListener("keyup", (event) => {
 deleteBtn.addEventListener("click", () => {
   let storeValue = subheading.innerText.toUpperCase();
   let newShoppingList = shoppingList.filter(
-    (element) => element.isShopped === false
+    (element) => element.isShopped === false,
   );
   shoppingList = newShoppingList;
   render(shoppingList);
-  localStorage.setItem(storeValue, JSON.stringify(shoppingList));
+  if (shoppingList.length <= 0) {
+    localStorage.removeItem(storeValue);
+  } else {
+    localStorage.setItem(storeValue, JSON.stringify(shoppingList));
+  }
 });
 
 /* ********************************************************************************************************** */
