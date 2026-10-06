@@ -1,0 +1,16 @@
+{
+    "short_name": "Einkauf",
+    "name": "Meine Einkaufsliste",
+    "icons": [
+        {
+            "src": "icon.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "./index.html",
+    "background_color": "#f5f5dc",
+    "display": "standalone",
+    "theme_color": "#afa98e"
+}
