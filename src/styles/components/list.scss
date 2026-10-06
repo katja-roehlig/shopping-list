@@ -23,11 +23,11 @@
 .shopping-item__input {
   padding: 8px 10px 8px 15px;
   width: 80%;
-  height: 44px !important;
+  height: 4.8rem;
    -webkit-appearance: none; 
   appearance: none;
   border: none;
-  font-size: 17px !important;
+  font-size: 1.9rem;
   border-radius: 1.2rem;
   margin-inline: 0;
   @media (min-width: 630px) {
@@ -37,7 +37,7 @@
 input:focus {
   outline: none;
   border: 1px solid $accent-color;
-  font-size: 17px !important;
+  font-size: 1.9rem 
 }
 .list__label {
   padding-left: 1.5rem;
