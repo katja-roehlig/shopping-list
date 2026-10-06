@@ -19,9 +19,9 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   background-image: linear-gradient(
-    $bg-color,
+    $background-color-dark,
     rgba(172, 165, 138, 0.447),
-    $bg-color
+    $background-color-dark
   );
 }
 .visually-hidden {

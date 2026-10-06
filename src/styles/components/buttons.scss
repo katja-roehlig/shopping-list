@@ -5,34 +5,32 @@
   color: #fff;
   background-color: $contrast-color;
   border-radius: 50%;;
-  border: 2px solid white; 
+  border: 2px solid $background-color; 
   box-shadow: 0 0 0 2px $contrast-color-light;
  
   margin: 0;
 }
 
-.list:empty {
-  + .btn-wrapper {
-    display: none;
-  }
-}
 
 .btn-wrapper{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 1.5rem;;
+  margin-top: 1.5rem;
+  display: none;
 }
+.list:has(.checkbox:checked){
+  + .btn-wrapper{
+    display: flex
+  }
+}
+
 
 .btn-delete {
   border-radius: 3rem;
   padding: 0.6rem 1.1rem 0.6rem 1.1rem;
   font-size: 2rem;
   margin-inline:auto 0;
-  // position: absolute;
-  // bottom: 5%;
-  // right: 3.5rem;
-  // text-align: center;
 }
 
 .btn-delete svg path{
