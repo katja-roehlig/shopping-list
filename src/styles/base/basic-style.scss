@@ -41,13 +41,14 @@ html, body{
   background-color: $background-color;
   width: 95%;
   max-width: 800px;
-  min-height: 550px;
-  margin: 3rem auto 7rem auto;
+  min-height: 600px;
+//  min-height: calc(100dvh - 10rem);
+  margin: 3rem auto 5rem auto;
   padding-inline: 2.5rem;
   box-shadow: 0px 0px 5px $contrast-color;
   border-radius: 12px;
   position: relative;
-  padding-bottom: 1.5rem;
+  padding-bottom: 3.5rem;
   @media (min-width: 630px) {
     padding-top: 2rem;
     padding-inline: 5rem;
