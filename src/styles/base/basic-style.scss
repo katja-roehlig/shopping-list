@@ -6,7 +6,6 @@
 }
 html, body{
   width: 100%;
-  max-width: 100vw;
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
@@ -39,6 +38,7 @@ body {
 .main {
   background-color: $background-color;
   width: 90%;
+  max-width: 800px;;
   min-height: calc(100dvh - 7rem);
   margin: 3rem auto 4rem auto;
   padding-inline: 2.5rem;
@@ -55,5 +55,5 @@ input[type="text"],
 .store__input,
 .shopping-item__input {
   -webkit-text-size-adjust: 100%;
-  font-size: max(17px, 1.7rem) !important; 
+  font-size: 17px !important; 
 }
