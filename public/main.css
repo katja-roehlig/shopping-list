@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+body {
+  font-size: 1.7rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-image: linear-gradient(rgb(172, 165, 138), rgba(172, 165, 138, 0.447), rgb(172, 165, 138));
+}
+
 html, body {
   width: 100%;
   min-height: 100dvh;
@@ -15,11 +21,10 @@ html, body {
 html {
   font-size: 62.5%;
 }
-
-body {
-  font-size: 1.9rem;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  background-image: linear-gradient(rgb(172, 165, 138), rgba(172, 165, 138, 0.447), rgb(172, 165, 138));
+@media (max-width: 480px) {
+  html {
+    font-size: 75%;
+  }
 }
 
 .visually-hidden {
@@ -54,7 +59,6 @@ body {
 input[type=text],
 .store__input,
 .shopping-item__input {
-  font-size: 1.9rem;
   font-family: inherit;
 }
 
@@ -88,7 +92,6 @@ input[type=text],
   -webkit-appearance: none;
   appearance: none;
   border: none;
-  font-size: 1.9rem;
   border-radius: 1.2rem;
   margin-inline: 0;
 }
@@ -101,7 +104,6 @@ input[type=text],
 input:focus {
   outline: none;
   border: 1px solid #d70a9a;
-  font-size: 1.9rem;
 }
 
 .list__label {
@@ -230,7 +232,6 @@ input[type=checkbox] {
   padding: 8px 5px 8px 15px;
   border: none;
   border-radius: 12px;
-  font-size: 1.9rem;
   font-family: inherit;
   -webkit-appearance: none;
   appearance: none;
@@ -239,7 +240,6 @@ input[type=checkbox] {
 input:focus {
   outline: none;
   border: 1px solid #d70a9a;
-  font-size: 1.9rem;
 }
 
 /*# sourceMappingURL=main.css.map */

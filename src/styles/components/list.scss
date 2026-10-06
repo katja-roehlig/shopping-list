@@ -27,7 +27,7 @@
    -webkit-appearance: none; 
   appearance: none;
   border: none;
-  font-size: 1.9rem;
+  // font-size: 1.7rem;
   border-radius: 1.2rem;
   margin-inline: 0;
   @media (min-width: 630px) {
@@ -37,7 +37,7 @@
 input:focus {
   outline: none;
   border: 1px solid $accent-color;
-  font-size: 1.9rem 
+  // font-size: 1.7rem 
 }
 .list__label {
   padding-left: 1.5rem;
