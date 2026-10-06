@@ -9,7 +9,6 @@ const deleteBtn = document.querySelector(".btn-delete");
 const ulElement = document.querySelector(".list");
 let subheading = document.querySelector(".main__subheading");
 //* Store zum 1.Mal eingeben *************************************************************************************************** */
-storeInput.focus();
 storeBtn.addEventListener("click", (event) => {
     event.preventDefault;
     storeForm.style.display = "none";

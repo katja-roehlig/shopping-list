@@ -18,7 +18,6 @@ let subheading = document.querySelector(
 ) as HTMLHeadingElement;
 
 //* Store zum 1.Mal eingeben *************************************************************************************************** */
-storeInput.focus();
 storeBtn.addEventListener("click", (event) => {
   event.preventDefault;
   storeForm.style.display = "none";
