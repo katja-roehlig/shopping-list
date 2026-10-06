@@ -4,11 +4,13 @@
   all: unset;
   color: #fff;
   background-color: $contrast-color;
-  border-radius: 50%;;
+  border-radius: 50%;
   border: 2px solid $background-color; 
   box-shadow: 0 0 0 2px $contrast-color-light;
- 
-  margin: 0;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 
@@ -27,20 +29,21 @@
 
 
 .btn-delete {
-  border-radius: 3rem;
-  padding: 0.6rem 1.1rem 0.6rem 1.1rem;
+  width: 40px;
+  height: 40px;
   font-size: 2rem;
   margin-inline:auto 0;
+   text-align: center;
 }
 
 .btn-delete svg path{
   stroke: $background-color;
-  stroke-width: 1.2px; 
+  stroke-width: 1.3px; 
   paint-order: stroke fill;
 }
 .shopping-item__btn svg path{
   stroke: #fff;
-  stroke-width: 0.5px; 
+  stroke-width: 0.7px; 
   paint-order: stroke fill;
 }
 .store__btn {
@@ -55,8 +58,8 @@
 }
 
 .shopping-item__btn {
-  border-radius: 4rem;
-  padding: 0.6rem 1rem 0.6rem 1rem;
+   width: 40px;
+  height: 40px;
   font-size: 2rem;
   text-align: center;
 
