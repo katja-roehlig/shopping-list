@@ -1,7 +1,14 @@
 * {
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 html {
@@ -9,7 +16,7 @@ html {
 }
 
 body {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   background-image: linear-gradient(rgb(172, 165, 138), rgba(172, 165, 138, 0.447), rgb(172, 165, 138));
 }
@@ -26,10 +33,10 @@ body {
 
 .main {
   background-color: beige;
-  width: 85vw;
-  min-height: 85vh;
-  margin-top: 3rem;
-  padding-inline: 3.5rem;
+  width: 90%;
+  min-height: calc(100dvh - 7rem);
+  margin: 3rem auto 4rem auto;
+  padding-inline: 2.5rem;
   box-shadow: 0px 0px 5px rgba(61, 47, 142, 0.895);
   border-radius: 0.3rem;
   position: relative;
@@ -40,10 +47,6 @@ body {
     padding-top: 2rem;
     padding-inline: 5rem;
   }
-}
-
-.footer {
-  width: 90vw;
 }
 
 .list {
@@ -72,8 +75,10 @@ body {
 .shopping-item__input {
   padding: 0.8rem 1rem 0.8rem 1.5rem;
   width: 80%;
+  height: 4.4rem;
   border: none;
-  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 1.2rem;
   margin-inline: 0;
 }
 @media (min-width: 630px) {
@@ -84,15 +89,19 @@ body {
 
 input:focus {
   outline: none;
-  border: 1px solid rgba(61, 47, 142, 0.895);
+  border: 1px solid #d70a9a;
 }
 
 .list__label {
-  padding: 0.7rem 1rem;
-  border-radius: 1.5rem;
+  padding-left: 1.5rem;
+  border-radius: 1.2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   color: rgba(61, 47, 142, 0.895);
-  margin: 0;
+  height: 4rem;
   background-color: rgba(255, 255, 255, 0.612);
+  border: 1px solid rgba(61, 47, 142, 0.1);
   flex-basis: 100%;
 }
 
@@ -104,39 +113,54 @@ input:focus {
   gap: 1rem;
 }
 
-.listCheckbox {
-  height: 2rem;
-  width: 2rem;
-  accent-color: rgb(215, 10, 154);
+.checkbox {
+  height: 2.5rem;
+  width: 2.5rem;
+  accent-color: #d70a9a;
 }
 
-input[type=listCheckbox] {
+input[type=checkbox] {
   margin: 0;
 }
 
 .btn {
   all: unset;
-  color: beige;
+  color: #fff;
   background-color: rgba(61, 47, 142, 0.895);
-  border-radius: 2rem;
-  box-shadow: inset 0px 0px 8px 2px beige;
-  border: 1px solid rgb(172, 165, 138);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px rgba(61, 47, 142, 0.1);
   margin: 0;
+}
+
+.list:empty + .btn-wrapper {
+  display: none;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
 }
 
 .btn-delete {
   border-radius: 3rem;
   padding: 0.6rem 1.1rem 0.6rem 1.1rem;
   font-size: 2rem;
-  position: absolute;
-  bottom: 5%;
-  right: 3.5rem;
-  text-align: center;
+  margin-inline: auto 0;
 }
-@media (min-width: 630px) {
-  .btn-delete {
-    right: 5rem;
-  }
+
+.btn-delete svg path {
+  stroke: beige;
+  stroke-width: 1.2px;
+  paint-order: stroke fill;
+}
+
+.shopping-item__btn svg path {
+  stroke: #fff;
+  stroke-width: 0.5px;
+  paint-order: stroke fill;
 }
 
 .store__btn {
@@ -145,13 +169,11 @@ input[type=listCheckbox] {
   padding: 0.8rem 1.5rem;
   position: absolute;
   right: 0%;
+  top: 5%;
   background-color: transparent;
   font-weight: bold;
 }
 
-/* .shopping-item__btn {
-  padding: 0.7rem 2rem 0.5rem 2rem;
-} */
 .shopping-item__btn {
   border-radius: 4rem;
   padding: 0.6rem 1rem 0.6rem 1rem;
@@ -177,10 +199,11 @@ input[type=listCheckbox] {
 .store {
   display: flex;
   justify-content: center;
-  width: 75%;
+  width: 80%;
   position: relative;
   border-radius: 1.5rem;
   margin-top: 1rem;
+  margin-inline: auto;
 }
 @media (min-width: 630px) {
   .store {
@@ -190,15 +213,16 @@ input[type=listCheckbox] {
 
 .store__input {
   width: 100%;
+  height: 4.4rem;
   padding: 0.8rem 0.5rem 0.8rem 1.5rem;
   border: none;
   border-radius: 1.5rem;
-  margin-inline: 0;
+  font-size: 1.6rem;
 }
 
 input:focus {
   outline: none;
-  border: 1px solid rgba(61, 47, 142, 0.895);
+  border: 1px solid #d70a9a;
 }
 
 /*# sourceMappingURL=main.css.map */

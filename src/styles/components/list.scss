@@ -23,24 +23,29 @@
 .shopping-item__input {
   padding: 0.8rem 1rem 0.8rem 1.5rem;
   width: 80%;
+  height: 4.4rem;
   border: none;
-  border-radius: 1.5rem;
+  font-size: 1.5rem;;
+  border-radius: 1.2rem;
   margin-inline: 0;
   @media (min-width: 630px) {
     max-width: 55%;
   }
 }
-
 input:focus {
   outline: none;
-  border: 1px solid $contrast-color;
+  border: 1px solid $accent-color;
 }
 .list__label {
-  padding: 0.7rem 1rem;
-  border-radius: 1.5rem;
+  padding-left: 1.5rem;
+  border-radius: 1.2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   color: $contrast-color;
-  margin: 0;
+  height: 4rem;
   background-color: rgba(255, 255, 255, 0.612);
+  border: 1px solid $contrast-color-light;
   flex-basis: 100%;
 }
 .list__item {
@@ -50,11 +55,11 @@ input:focus {
   align-items: center;
   gap: 1rem;
 }
-.listCheckbox {
-  height: 2rem;
-  width: 2rem;
-  accent-color: rgb(215, 10, 154);
+.checkbox {
+  height: 2.5rem;
+  width: 2.5rem;
+  accent-color: $accent-color;
 }
-input[type="listCheckbox"] {
+input[type="checkbox"] {
   margin: 0;
 }

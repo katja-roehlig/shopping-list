@@ -2,24 +2,48 @@
 
 .btn {
   all: unset;
-  color: $background-color;
+  color: #fff;
   background-color: $contrast-color;
-  border-radius: 2rem;
-  box-shadow: inset 0px 0px 8px 2px $background-color;
-  border: 1px solid $accent-color;
+  border-radius: 50%;;
+  border: 2px solid white; 
+  box-shadow: 0 0 0 2px $contrast-color-light;
+ 
   margin: 0;
 }
+
+.list:empty {
+  + .btn-wrapper {
+    display: none;
+  }
+}
+
+.btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1.5rem;;
+}
+
 .btn-delete {
   border-radius: 3rem;
   padding: 0.6rem 1.1rem 0.6rem 1.1rem;
   font-size: 2rem;
-  position: absolute;
-  bottom: 5%;
-  right: 3.5rem;
-  text-align: center;
-  @media (min-width: 630px) {
-    right: 5rem;
-  }
+  margin-inline:auto 0;
+  // position: absolute;
+  // bottom: 5%;
+  // right: 3.5rem;
+  // text-align: center;
+}
+
+.btn-delete svg path{
+  stroke: $background-color;
+  stroke-width: 1.2px; 
+  paint-order: stroke fill;
+}
+.shopping-item__btn svg path{
+  stroke: #fff;
+  stroke-width: 0.5px; 
+  paint-order: stroke fill;
 }
 .store__btn {
   all: unset;
@@ -27,15 +51,15 @@
   padding: 0.8rem 1.5rem;
   position: absolute;
   right: 0%;
+  top: 5%;
   background-color: transparent;
   font-weight: bold;
 }
-/* .shopping-item__btn {
-  padding: 0.7rem 2rem 0.5rem 2rem;
-} */
+
 .shopping-item__btn {
   border-radius: 4rem;
   padding: 0.6rem 1rem 0.6rem 1rem;
   font-size: 2rem;
   text-align: center;
+
 }
