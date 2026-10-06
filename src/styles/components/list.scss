@@ -21,9 +21,11 @@
 }
 
 .shopping-item__input {
-  padding: 0.8rem 1rem 0.8rem 1.5rem;
+  padding: 8px 10px 8px 15px;
   width: 80%;
-  height: 4.4rem;
+  height: 44px !important;
+   -webkit-appearance: none; 
+  appearance: none;
   border: none;
   font-size: 17px !important;
   border-radius: 1.2rem;

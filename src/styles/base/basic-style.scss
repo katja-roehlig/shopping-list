@@ -9,11 +9,12 @@ html, body{
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+
 }
 html {
   font-size: 62.5%;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+ 
 }
 
 body {
@@ -54,6 +55,6 @@ body {
 input[type="text"],
 .store__input,
 .shopping-item__input {
-  -webkit-text-size-adjust: 100%;
   font-size: 17px !important; 
+  font-family: inherit;
 }
