@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   background-image: linear-gradient(rgb(172, 165, 138), rgba(172, 165, 138, 0.447), rgb(172, 165, 138));
 }
@@ -49,6 +49,13 @@ body {
     padding-top: 2rem;
     padding-inline: 5rem;
   }
+}
+
+input[type=text],
+.store__input,
+.shopping-item__input {
+  -webkit-text-size-adjust: 100%;
+  font-size: 17px !important;
 }
 
 .list {
@@ -92,6 +99,7 @@ body {
 input:focus {
   outline: none;
   border: 1px solid #d70a9a;
+  font-size: 17px !important;
 }
 
 .list__label {
@@ -186,13 +194,13 @@ input[type=checkbox] {
 
 .main__heading {
   font-size: 2.5rem;
-  padding-block: 2rem 0.5rem;
+  padding-block: 3rem 2rem;
   text-align: center;
   color: rgba(61, 47, 142, 0.895);
 }
 
 .main__subheading {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   padding-block: 0rem 1.2rem;
   text-align: center;
   color: rgb(215, 10, 154);
@@ -226,6 +234,7 @@ input[type=checkbox] {
 input:focus {
   outline: none;
   border: 1px solid #d70a9a;
+  font-size: 17px !important;
 }
 
 /*# sourceMappingURL=main.css.map */

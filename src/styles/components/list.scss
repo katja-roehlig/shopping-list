@@ -35,6 +35,7 @@
 input:focus {
   outline: none;
   border: 1px solid $accent-color;
+  font-size: 17px !important;
 }
 .list__label {
   padding-left: 1.5rem;
